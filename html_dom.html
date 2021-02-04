@@ -34,7 +34,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>
-                    <h3 class="modal-title text-danger">警告！</h3>
+                    <h3 class="modal-title text-danger">Предупреждение!</h3>
                 </div>
                 <div class="modal-body">
                     <p>Пожалуйста, внимательно проверьте и заполните необходимые поля!</p>
@@ -45,6 +45,26 @@
             </div>
         </div>
     </div>
+
+    <div id="viewScores" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>
+                    <h3 class="modal-title text-danger">Ваш результат!</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Сумма баллов: <span id="yourScores"></span></p>
+                    <p>Оценка: <span id="yourMark"></span></p>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-primary" data-dismiss="modal">Пожалуйста, подтвердите эту информацию</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h1 class="text-center">Тест по теории унифицированного языка моделирования</h1>
 
     <div class="panel panel-default">
@@ -60,22 +80,25 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row">
+                <div id="name" class="col-md-4 form-group">
+                    <label class="control-label">
+                        Имя (обязательно)：
+                       <select id="studentName" name="studentName" class="form-control">
+                       </select>
+                    </label>
+                </div>
                 <div id="class" class="col-md-4 form-group">
                     <label class="control-label">
-                        Класс (обязательно）:
-                      <input type="text" id="studentClass" name="studentClass" class="form-control">
+                        Класс:
+                      <div id="studentClass" name="studentClass" class="form-control">
+                      </div>
                     </label>
                 </div>
                 <div id="number" class="col-md-4 form-group">
                     <label class="control-label">
-                        Номер школы (обязательно）：
-                      <input type="text" id="studentNumber" name="studentNumber" class="form-control">
-                    </label>
-                </div>
-                <div id="name" class="col-md-4 form-group">
-                    <label class="control-label">
-                        Имя (обязательно）：
-                       <input type="text" id="studentName" name="studentName" class="form-control">
+                        Номер школы：
+                      <div id="studentNumber" name="studentNumber" class="form-control">
+                      </div>
                     </label>
                 </div>
             </div>
@@ -284,6 +307,8 @@
 
    </form>
  </div>
+ <script type="text/javaScript" src="data/data.js"></script>
+ <script type="text/javaScript" src="js/model/select.js"></script>
 </body>
 
 </html>

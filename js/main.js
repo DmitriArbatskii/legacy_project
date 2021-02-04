@@ -32,16 +32,6 @@ function inputsInformation(inputs) {
 function hasEmptyRequiredInput(){
     var requiredInputs = [
         {
-            id: 'studentClass',
-            text: 'Класс',
-            divId: 'class'
-        },
-        {
-            id: 'studentNumber',
-            text: 'Номер',
-            divId: 'number'
-        },
-        {
             id: 'studentName',
             text: 'Имя',
             divId: 'name'
@@ -59,9 +49,20 @@ function hasEmptyRequiredInput(){
 function Get_scores() {
 
     var value = fullInTopics() + choiceTopics() + multipleChoiceTopics() + trueOrFalseTopics() + shortAnswerTopics();
-    $("#scores").text(value);
+    $('#scores').text(value);
     $('#divScores').addClass('text-danger');
+    $('#yourScores').text(value);
+    $('#viewScores').modal('show');
 
+    if (value <= 20) {
+        $('#yourMark').text('2');
+    } else if (value > 21 && value <= 40) {
+        $('#yourMark').text('3');
+    } else if (value > 41 && value <= 60) {
+        $('#yourMark').text('4');
+    } else {
+        $('#yourMark').text('5');
+    }
 }
 
 function fullInTopics() {
@@ -77,7 +78,7 @@ function fullInTopics() {
     var value1_2 = [];
     value1_2.push($('#gap2_1').val());
     value1_2.push($('#gap2_2').val());
-    value1_2.push($('gap2_3').val());
+    value1_2.push($('#gap2_3').val());
 
     for (var i = 0; i < fullInSubject2.answer.length; i++) {
         for (var j = 0; j < value1_2.length; j++) {
